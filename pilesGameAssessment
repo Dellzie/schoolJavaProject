@@ -1,0 +1,58 @@
+/**
+ * author: Caleb Dell
+ * desciption:
+ * date: 22/8/16
+ * 
+ * 
+ * 
+ * The program is a piles game. It will run by asking for the users names then 
+ * the amount of games that they would like to play (going upto three) while keeping scores
+ * tried to the user that wins the game. Then looping to the wanted number and out puting the game
+ * that the players is up to. Once the game has been setup and user input for names has been aquired
+ * it will then choose a random number of counters to put in the array state the amount in each pile.
+ * After this the program will randomly pick which player will start 
+ * 
+ * 
+ **/
+
+import java.util.Random; //This imports the Random class, this allows us to generate a number between to given variables.
+import java.util.Scanner;//This imports the Scanner class which allows us to get user input (For this project input will be done though the keyboard).
+
+public class pilesGameAssessment{
+  
+  public static void main (String [] args){
+    int pileOne [] =;
+    int pileTwo [] =;
+    int pileThree [] =;
+    int pileFour [] =;
+    int pileFive [] =;
+    
+    int gameCount = 0;
+    
+    int playerOneScore = 0;
+    int playerTwoScore = 0;
+    
+    String playerOne = "";
+    String playerTwo = "";
+    
+    
+    
+    
+    
+    System.out.println("Hello this is a piles game the basic rules are"); 
+    System.out.println("there are 5 piles and a random number of counters "); 
+    System.out.println("in each pile. They will be displayed like this 1:3"); 
+    System.out.println("this means pile 1 has 3 counters. You can take a any"); 
+    System.out.println("amount of counters in each pile and the one left"); 
+    System.out.println("with the last counter wins."); 
+    
+  }//main
+  
+    public static String readString(String prompt){
+        System.out.println(prompt);
+        Scanner keyboard = new Scanner(System.in);
+        return keyboard.nextLine();
+    }//end readString
+  
+
+}//class
