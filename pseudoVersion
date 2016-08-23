@@ -1,7 +1,7 @@
 /*
-INPUT player 1's name
-INPUT player 2's name
-INPUT number of games to play
+INPUT player 1's name //done
+INPUT player 2's name //done
+INPUT number of games to play //done
 
 SET game count to 0
 SET players' scores to 0
@@ -50,6 +50,9 @@ public static pseudoVersion{
   public static void main(String [] args){
   int gamesWanted = 0 ; 
   int pickedUser = 0 ;
+  int gameCount = 0 ;
+  int player1Score = 0 ;
+  int player2Score = 0 ;
   
   System.out.println("How many games would you like to play: ");
   gamesWanted = keyboard.nextline;
@@ -65,12 +68,25 @@ public static pseudoVersion{
   
   
   
+  
+  //Make and display the piles
+  
+  
+
+  if(pickedUser == 1){
+	  System.out.println(player1 + "will start ");
+  }else if(pickedUser == 2){
+	  System.out.println("");
+  }else{
+	  System.out.println("An error occured please restart the program.");
+  }//else if stack
+  
+  
   }//main
     public static int pickedUser(){
       Random rand = new Random();
       int pickedUser = rand.nextInt((max-min)+1)+min;
-      
-    }
+  }//pickedUser Method
   
   
   
@@ -84,13 +100,13 @@ public static pseudoVersion{
              System.out.println("Caught error - not an integer");
         }
         return userInput;
-    }//end readInt
+    }//end readInt Method
     
     
     public static String readString(String prompt){
         System.out.println(prompt);
         Scanner keyboard = new Scanner(System.in);
         return keyboard.nextLine();
-    }//end readString
+    }//end readString Method
   
 }//class
