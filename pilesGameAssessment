@@ -17,9 +17,7 @@ public class pilesGameAssessment{
   
   public static void main (String [] args){
 	
-	
-	
-	 nextLine = new Scanner (System.in);
+	keyboard.nextLine = new Scanner (System.in);
 
     System.out.println("Hello this is a piles game the basic rules are"); 
     System.out.println("there are 5 piles and a random number of counters "); 
@@ -37,16 +35,22 @@ public class pilesGameAssessment{
     String player2;
     System.out.println ("Can the second player now enter their name here : ");
     player2 = keyboard.nextLine();
+    
+    
   }//main
-  public static int gameLogic(){
-   
-    if(){
-
+  public static int gameLogic(int 1, int 2,){
+   Random rand = new Random();
+   int pickedUser = rand.nextInt((max-min)+1)+min;
+    if(pickedUser == 1){
+	System.out.println(player1 + "will be going first");
     }else{
+    System.out.println(player2+ "will be going first ");
     }
+    
+    
   }
 
-    public static String readString(String prompt){
+  public static String readString(String prompt){
         System.out.println(prompt);
         Scanner keyboard = new Scanner(System.in);
         return keyboard.nextLine();
