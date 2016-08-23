@@ -16,6 +16,8 @@ import java.util.Scanner;//This imports the Scanner class which allows us to get
 public class pilesGameAssessment{
   
   public static void main (String [] args){
+	int pickedUser = 0;
+	
 	
 	keyboard.nextLine = new Scanner (System.in);
 
@@ -28,17 +30,22 @@ public class pilesGameAssessment{
     System.out.println("-----------------------------------------------------");
     System.out.println("Now can the first player enter their name......");
     
-    String player1;
+    String player1;//This is defining what value the player 1 and 2 variable has. 
     System.out.println("Enter name here: ");
     player1 = keyboard.nextLine();
     
-    String player2;
+    String player2; 
     System.out.println ("Can the second player now enter their name here : ");
     player2 = keyboard.nextLine();
     
     
   }//main
-  public static int gameLogic(int 1, int 2,){
+  
+  /*This method is choosing what player goes first by
+   *selecting a random number between 1 and 2 and 
+   */this will then decide who goes first.
+   
+  public static int whatUserGotPicked(int 1, int 2,){
    Random rand = new Random();
    int pickedUser = rand.nextInt((max-min)+1)+min;
     if(pickedUser == 1){
@@ -46,10 +53,9 @@ public class pilesGameAssessment{
     }else{
     System.out.println(player2+ "will be going first ");
     }
-    
-    
-  }
-
+  }//gameLogic
+  
+//This method gets user input
   public static String readString(String prompt){
         System.out.println(prompt);
         Scanner keyboard = new Scanner(System.in);
