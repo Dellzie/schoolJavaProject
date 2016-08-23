@@ -66,20 +66,36 @@ public static pseudoVersion{
   player2 = keyboard.nextLine;
   
   
+  //Set game count and player score to 0
+  
   
   
   
   //Make and display the piles
   
-  
+  do{
+	
+	  if(pickedUser == 1){
+		  System.out.println(player1 + "will start ");
+	  }else if(pickedUser == 2){
+		  System.out.println("");
+	  }else{
+		  System.out.println("An error occured please restart the program.");
+	  }//else if stack
+	  
+	  for(int gameCount =0; gameCount<gamesWanted.length;gameCount++){
+		  System.out.println("You are up to game" +gameCount);
+  	  }//for loop
+  }while(gameCount > gamesWanted );//do while loop
 
-  if(pickedUser == 1){
-	  System.out.println(player1 + "will start ");
-  }else if(pickedUser == 2){
-	  System.out.println("");
+
+  if(player1Score<player2Score){
+  	System.out.println(player1+ " has won the game with " +player1Score " points")
+  }else if(player2Score<player1Score){
+  	System.out.println(player2+ " has won the game with " +player2Score " points")
   }else{
-	  System.out.println("An error occured please restart the program.");
-  }//else if stack
+  	System.out.println("An error has occured please contact your system admin.");
+  }
   
   
   }//main
