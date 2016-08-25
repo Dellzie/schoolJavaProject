@@ -1,45 +1,103 @@
+
+/**
+ * @author: Caleb Dell
+ * @desciption:
+ * @date: 22/8/16
+ * The program is a piles game. It will run by asking for the users names then 
+ * the amount of games that they would like to play (going upto three) while keeping scores
+ * tried to the user that wins the game. Then looping to the wanted number and out puting the game
+ * that the players is up to. Once the game has been setup and user input for names has been aquired
+ * it will then choose a random number of counters to put in the array state the amount in each pile.
+ * After this the program will randomly pick which player will start 
+ **/
+import java.util.Scanner;
+import java.util.Random;
+
+
 public class pilesGame{
 
  public static void main(String [] args){
+ String player1 = "";
+ String player2 = "";
  
+ int minGames = 1;
+ int maxGames = 3;
+ int gameCount = 0;
+ int gamesPlayed = 0; 
+ int userPicked = 0;
+ int min = 1;
+ int max = 3;
+ int startingPlayer = 0;
+ int player1Int = 1;
+ int player2Int = 2;
  
- String player1 ="" ;
-  System.out.println("Player 1 enter your name: ");
-  player1 = keyboard.nextLine;
- String player2 ="" ;
-  System.out.println("Player 1 enter your name: ");
-  player2 = keyboard.nextLine;
- 
- 
- 
- 
- 
- 
- 
- }//main
-  public static int pickedUser(){
-      Random rand = new Random();
-      int pickedUser = rand.nextInt((max-min)+1)+min;
-  }//pickedUser Method
+   System.out.println("Hello this is a piles game the basic rules are"); 
+   System.out.println("there are 5 piles and a random number of counters "); 
+   System.out.println("in each pile. They will be displayed like this 1:3"); 
+   System.out.println("this means pile 1 has 3 counters. You can take a any"); 
+   System.out.println("amount of counters in each pile and the one left"); 
+   System.out.println("with the last counter wins."); 
+   System.out.println("-----------------------------------------------------");
+   player1 = readString("Now can the first player enter their name......");
+   player2 = readString("Awesome, now can the second player enter their name......");
+   
 
-  public static int readInt(String prompt){
-      int userInput =0;
-        System.out.println(prompt);
-        try{
-             Scanner keyboard = new Scanner(System.in);
-             userInput = keyboard.nextInt();
-        }catch(Exception e){
-             System.out.println("Caught error - not an integer");
-        }
-        return userInput;
-    }//end readInt Method
-    
-    
-   public static String readString(String prompt){
-        System.out.println(prompt);
-        Scanner keyboard = new Scanner(System.in);
-        return keyboard.nextLine();
-    }//end readString Method
+
+   do{
+     
+     if(userPicked == 1){
+       System.out.println(player1 +" will start the game.");
+     }else{
+       System.out.println(player2+ " will start the game.");
+     }
+     
+     System.out.println("The piles are.....");
+     System.out.println("1 |"+ int [0] pilesArray);
+     System.out.println("2 |"+int [1] pilesArray);
+     System.out.println("3 |"+int [2]pilesArray);
+     System.out.println("4 |"+int [3]pilsArray);
+     System.out.println("5 |"+int [4]pilesArray);
+   }while(gameCount < gamesPlayed);
+   
+   
+   
+   
+ }//main
+ public static int [] piles(){
+   int pilesArray = new Int [5];
+   
+   for(int i =0;i<pilesArray;i++ ){
+     
+     pilesArray[i] = randomFill();
+     
+   }
+   
+   return int [] pilesArray;   
+ }
  
  
+ 
+ private static int userPicked(int min,int max){
+   Random rand = new Random();
+   int userPicked = rand.nextInt(min-max)+1; 
+   return userPicked;
+ }//pickedUser Method
+ 
+ public static int readInt(String prompt){
+   int userInput =0;
+   System.out.println(prompt);
+   try{
+     Scanner keyboard = new Scanner(System.in);
+     userInput = keyboard.nextInt();
+   }catch(Exception e){
+     System.out.println("Caught error - not an integer");
+   }
+   return userInput;
+ }//end readInt
+ 
+ public static String readString(String prompt){
+   System.out.println(prompt);
+   Scanner keyboard = new Scanner(System.in);
+   return keyboard.nextLine();
+ }//end readString
 }//class
