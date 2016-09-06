@@ -21,6 +21,10 @@ public class myCode{
     int userPicked = 0;
     int player1Score = 0;
     int player2Score = 0;
+    int userPile1 = 0;
+    int userPile2 = 0;
+    int userTokens1 = 0;
+    int userTokens2 = 0;
     
     String startingPlayer = "";
     String secondPlayer = "";
@@ -63,90 +67,91 @@ public class myCode{
       System.out.println("5 | " + piles [4]);
       
       
-      do{  
+      while (piles [0] + piles [1] + piles [2] + piles [3] + piles [4] > 1 ){  
         
         System.out.println(player2 + "First pick the pile you would like to minus from");
         System.out.println( "then pick the amount you would like to take away."); 
-        int userPile = readInt ("What pile would you like to minus from");
-        int userTokens = readInt("How many tokens would you like to take away");
-        //the game goes below this 
-        if(userPile == 1){
-          System.out.println("1 | " + (piles [0] - userTokens));
+        userPile1 = readInt ("What pile would you like to minus from");
+        userTokens1 = readInt("How many tokens would you like to take away");
+        
+        if(userPile1 == 1){
+          System.out.println("1 | " + (piles [0] - userTokens1));
           System.out.println("2 | " + piles [1]);
           System.out.println("3 | " + piles [2]);
           System.out.println("4 | " + piles [3]);
           System.out.println("5 | " + piles [4]);  
-        }else if(userPile == 2){
+        }else if(userPile1 == 2){
           System.out.println("1 | " + piles [0]);
-          System.out.println("2 | " + (piles [1] - userTokens));
+          System.out.println("2 | " + (piles [1] - userTokens1));
           System.out.println("3 | " + piles [2]);
           System.out.println("4 | " + piles [3]);
           System.out.println("5 | " + piles [4]);  
-        }else if(userPile == 3){
+        }else if(userPile1 == 3){
           System.out.println("1 | " + piles [0]);
           System.out.println("2 | " + piles [1]);
-          System.out.println("3 | " + (piles [2] - userTokens));
+          System.out.println("3 | " + (piles [2] - userTokens1));
           System.out.println("4 | " + piles [3]);
           System.out.println("5 | " + piles [4]);
-        }else if(userPile == 4){
+        }else if(userPile1 == 4){
           System.out.println("1 | " + piles [0]);
           System.out.println("2 | " + piles [1]);
           System.out.println("3 | " + piles [2]);
-          System.out.println("4 | " + (piles [3] - userTokens));
+          System.out.println("4 | " + (piles [3] - userTokens1));
           System.out.println("5 | " + piles [4]);
-        }else if(userPile == 5){
+        }else if(userPile1 == 5){
           System.out.println("1 | " + piles [0]);
           System.out.println("2 | " + piles [1]);
           System.out.println("3 | " + piles [2]);
           System.out.println("4 | " + piles [3]);
-          System.out.println("5 | " + (piles [4] - userTokens));
+          System.out.println("5 | " + (piles [4] - userTokens1));
         }else{
           System.out.println("An error occured"); 
         }//else
         
-        System.out.println(player1 + "First pick the pile you would like to minus from");
+        
+        System.out.println("Player 2 first pick the pile you would like to minus from");
         System.out.println( "then pick the amount you would like to take away."); 
-        int userPile2 = readInt ("What pile would you like to minus from");
-        int userTokens2 = readInt("How many tokens would you like to take away");
-        //the game goes below this 
-        if(userPile == 1){
+        userPile2 = readInt ("What pile would you like to minus from");
+        userTokens2 = readInt("How many tokens would you like to take away");
+        
+        if(userPile2 == 1){
           System.out.println("1 | " + (piles [0] - userTokens2));
           System.out.println("2 | " + piles [1]);
           System.out.println("3 | " + piles [2]);
           System.out.println("4 | " + piles [3]);
           System.out.println("5 | " + piles [4]);  
-        }else if(userPile == 2){
+        }else if(userPile2 == 2){
           System.out.println("1 | " + piles [0]);
           System.out.println("2 | " + (piles [1] - userTokens2));
           System.out.println("3 | " + piles [2]);
           System.out.println("4 | " + piles [3]);
           System.out.println("5 | " + piles [4]);  
-        }else if(userPile == 3){
+        }else if(userPile2 == 3){
           System.out.println("1 | " + piles [0]);
           System.out.println("2 | " + piles [1]);
           System.out.println("3 | " + (piles [2] - userTokens2));
           System.out.println("4 | " + piles [3]);
           System.out.println("5 | " + piles [4]);
-        }else if(userPile == 4){
+        }else if(userPile2 == 4){
           System.out.println("1 | " + piles [0]);
           System.out.println("2 | " + piles [1]);
           System.out.println("3 | " + piles [2]);
-          System.out.println("4 | " + (piles [3] - userTokens));
-          System.out.println("1 | " + piles [4]);
-        }else if(userPile == 5){
+          System.out.println("4 | " + (piles [3] - userTokens2));
+          System.out.println("5 | " + piles [4]);
+        }else if(userPile2 == 5){
           System.out.println("1 | " + piles [0]);
-          System.out.println("1 | " + piles [1]);
-          System.out.println("1 | " + piles [2]);
-          System.out.println("1 | " + piles [3]);
-          System.out.println("5 | " + (piles [4] - userTokens));
+          System.out.println("2 | " + piles [1]);
+          System.out.println("3 | " + piles [2]);
+          System.out.println("4 | " + piles [3]);
+          System.out.println("5 | " + (piles [4] - userTokens2));
         }else{
           System.out.println("An error occured"); 
         }//else  
         
-        
-      }while (piles [0] + piles [1] + piles [2] + piles [3] + piles [4] > 1 );
 
-      
+        
+      }//while loop 
+
       
       if(player1Score<player2Score){
         System.out.println(player1+ " has won the game with " +player1Score + " points");
@@ -161,9 +166,9 @@ public class myCode{
     
   }//main
   
-  private static int userPicked(int minNUM,int maxNUM){
+  private static int userPicked(){
     Random rand = new Random();
-    int userPicked = rand.nextInt(minNUM-maxNUM)+1; 
+    int userPicked = rand.nextInt(2)+1; 
     return userPicked;
   }//pickedUser Method
   
@@ -185,3 +190,4 @@ public class myCode{
     return keyboard.nextLine();
   }//end readString
 }//class
+
