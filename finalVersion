@@ -58,7 +58,7 @@ public class myCode{
         player2 = startingPlayer;
         player1 = secondPlayer;
       } //else
-      gamesPlayed = gamesPlayed + 1; 
+      
       System.out.println("The piles are.....");
       System.out.println("1 | " + piles [0]);
       System.out.println("2 | " + piles [1]);
@@ -69,7 +69,7 @@ public class myCode{
       
       while (piles [0] + piles [1] + piles [2] + piles [3] + piles [4] > 1 ){  
         
-        System.out.println(player2 + "First pick the pile you would like to minus from");
+        System.out.println("Player 1 pick the pile you would like to minus from");
         System.out.println( "then pick the amount you would like to take away."); 
         userPile1 = readInt ("What pile would you like to minus from");
         userTokens1 = readInt("How many tokens would you like to take away");
@@ -109,7 +109,7 @@ public class myCode{
         }//else
         
         
-        System.out.println("Player 2 first pick the pile you would like to minus from");
+        System.out.println("Player 2, pick the pile you would like to minus from");
         System.out.println( "then pick the amount you would like to take away."); 
         userPile2 = readInt ("What pile would you like to minus from");
         userTokens2 = readInt("How many tokens would you like to take away");
@@ -147,9 +147,7 @@ public class myCode{
         }else{
           System.out.println("An error occured"); 
         }//else  
-        
-
-        
+     
       }//while loop 
 
       
@@ -166,6 +164,11 @@ public class myCode{
     
   }//main
   
+  //This is a method designed to pick a number 
+  //between 1 and 2. In order to choose who 
+  //has the first turn. Once a number has been 
+  //picked it will be returned into an if else
+  //found above.
   private static int userPicked(){
     Random rand = new Random();
     int userPicked = rand.nextInt(2)+1; 
@@ -179,7 +182,10 @@ public class myCode{
       Scanner keyboard = new Scanner(System.in);
       userInput = keyboard.nextInt();
     }catch(Exception e){
-      System.out.println("Caught error - not an integer");
+      System.out.println("You entered a letter or word.");
+      
+      Scanner keyboard = new Scanner(System.in);
+      userInput = keyboard.nextInt();
     }
     return userInput;
   }//end readInt
