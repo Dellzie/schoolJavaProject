@@ -14,9 +14,11 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class myCode{
-  
-  
   public static void main (String [] args){
+  game();
+  }//main
+  public static void game(){
+    
     int gamesPlayed = 0;
     int userPicked = 0;
     int player1Score = 0;
@@ -25,6 +27,8 @@ public class myCode{
     int userPile2 = 0;
     int userTokens1 = 0;
     int userTokens2 = 0;
+    
+    int playerTurn = 0;
     
     String startingPlayer = "";
     String secondPlayer = "";
@@ -47,6 +51,7 @@ public class myCode{
     String player1 = readString("Now can the first player enter their name......");
     String player2 = readString("Awesome, now can the second player enter their name......");
     int gamesWanted = readInt("How many games would you like to play (Max of 3)? ");
+    System.out.println("-----------------------------------------------------");
     
     do{
       if(userPicked == 1){
@@ -107,7 +112,9 @@ public class myCode{
         }else{
           System.out.println("An error occured"); 
         }//else
+         
         
+        playerTurn = 1;
         
         System.out.println("Player 2, pick the pile you would like to minus from");
         System.out.println( "then pick the amount you would like to take away."); 
@@ -147,22 +154,24 @@ public class myCode{
         }else{
           System.out.println("An error occured"); 
         }//else  
-     
-      }//while loop 
+     playerTurn  = 2 ;
+      }//While loop
 
       
       if(player1Score<player2Score){
-        System.out.println(player1+ " has won the game with " +player1Score + " points");
+        System.out.println(player1+ " has won the game with " + player1Score + " points");
       }else if(player2Score<player1Score){
-        System.out.println(player2+ " has won the game with " +player2Score + " points");
+        System.out.println(player2+ " has won the game with " + player2Score + " points");
       }else if(player1Score == player2Score){
         System.out.println("Its a draw both players have 1 point each.");
       }else{
         System.out.println("An error occured please contact a system administor."); 
       }
-    }while(gamesWanted < gamesPlayed);
+    }while(gamesWanted > gamesPlayed);
     
-  }//main
+    
+  }//game();
+  
   
   //This is a method designed to pick a number 
   //between 1 and 2. In order to choose who 
@@ -171,7 +180,7 @@ public class myCode{
   //found above.
   private static int userPicked(){
     Random rand = new Random();
-    int userPicked = rand.nextInt(2)+1; 
+    int userPicked = rand.nextInt( 2 ) + 1; 
     return userPicked;
   }//pickedUser Method
   
@@ -182,7 +191,7 @@ public class myCode{
       Scanner keyboard = new Scanner(System.in);
       userInput = keyboard.nextInt();
     }catch(Exception e){
-      System.out.println("You entered a letter or word.");
+      System.out.println("You entered a letter or word, please enter a number between 1 and 3. ");
       
       Scanner keyboard = new Scanner(System.in);
       userInput = keyboard.nextInt();
