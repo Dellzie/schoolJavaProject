@@ -115,48 +115,48 @@ public class piles_game3{
          
  
           
-          if(piles [0] + piles [1] + piles [2] + piles [3] + piles [4] <= 0){
+          if( piles [0] + piles [1] + piles [2] + piles [3] + piles [4] == 1){
             System.out.println(player1 + "is the winner");
             player1_score++;
-            System.out.println(player1 + "has" + player1_score + "points");
+            System.out.println( "Player 1 has " + player1_score + " points");
           }else{
           }
 
           
-          System.out.println(player2 + " pick the pile you would like to minus from");
+          System.out.println("Can player 2 please pick the pile you would like to minus from");
           System.out.println( "then pick the amount you would like to take away."); 
           userPile2 = readInt ("What pile would you like to minus from");
           userTokens2 = readInt("How many tokens would you like to take away");
           if(userPile2 == 1){
-            System.out.println("1 | " + (piles [0] - userTokens2));
+            System.out.println("1 | " + (piles [0] -= userTokens2));
             System.out.println("2 | " + piles [1]);
             System.out.println("3 | " + piles [2]);
             System.out.println("4 | " + piles [3]);
             System.out.println("5 | " + piles [4]);  
           }else if(userPile2 == 2){
             System.out.println("1 | " + piles [0]);
-            System.out.println("2 | " + (piles [1] - userTokens2));
+            System.out.println("2 | " + (piles [1] -= userTokens2));
             System.out.println("3 | " + piles [2]);
             System.out.println("4 | " + piles [3]);
             System.out.println("5 | " + piles [4]);  
           }else if(userPile2 == 3){
             System.out.println("1 | " + piles [0]);
             System.out.println("2 | " + piles [1]);
-            System.out.println("3 | " + (piles [2] - userTokens2));
+            System.out.println("3 | " + (piles [2] -= userTokens2));
             System.out.println("4 | " + piles [3]);
             System.out.println("5 | " + piles [4]);
           }else if(userPile2 == 4){
             System.out.println("1 | " + piles [0]);
             System.out.println("2 | " + piles [1]);
             System.out.println("3 | " + piles [2]);
-            System.out.println("4 | " + (piles [3] - userTokens2));
+            System.out.println("4 | " + (piles [3] -= userTokens2));
             System.out.println("5 | " + piles [4]);
           }else if(userPile2 == 5){
             System.out.println("1 | " + piles [0]);
             System.out.println("2 | " + piles [1]);
             System.out.println("3 | " + piles [2]);
             System.out.println("4 | " + piles [3]);
-            System.out.println("5 | " + (piles [4] - userTokens2));
+            System.out.println("5 | " + (piles [4] -= userTokens2));
           }else{
             System.out.println("An error occured");  
           }//ELSE 
@@ -177,7 +177,7 @@ public class piles_game3{
   
   private static int userPicked(){
     Random rand = new Random();
-    int userPicked = rand.nextInt( 2 ) + 1; 
+    int userPicked = rand.nextInt( 3 ) + 1; 
     return userPicked;
   }//pickedUser Method
   
@@ -203,4 +203,4 @@ public class piles_game3{
     Scanner keyboard = new Scanner(System.in);
     return keyboard.nextLine();
   }//end readString
-}//class
+}//classx
