@@ -7,28 +7,24 @@ public class piles_game3{
     
     
   
-    System.out.println("Hello this is a piles game the basic rules are"); 
+    System.out.println("Hello this is a piles game the basic rules are");     
     System.out.println("there are 5 piles and a random number of counters "); 
     System.out.println("in each pile. They will be displayed like this 1:3"); 
     System.out.println("this means pile 1 has 3 counters. You can take a any"); 
     System.out.println("amount of counters in each pile and the one left"); 
     System.out.println("with the last counter wins."); 
     System.out.println("-----------------------------------------------------");
-    String player1 = readString("Now can the first player enter their name......");
-    String player2 = readString("Awesome, now can the second player enter their name......");
-    int gamesWanted = readInt("How many games would you like to play (Max of 3)? ");
+    String player1 = readString("Now can the first player enter their name......");//This gets input from the user and makes a player1 String variable
+    String player2 = readString("Awesome, now can the second player enter their name......");//This gets input from the user and makes a player2 String variable
     System.out.println("-----------------------------------------------------");
    
+
     int player_turn =0;
     int game_count = 0;
     int games_played = 1;
     
-    int player1_score = 0;
-    int player2_score = 0;
     int player1_turn = 0;
     int player2_turn = 0;    
-    String startingPlayer = "";
-    String secondPlayer = "";
     
     int userPile1 = 0;
     int userTokens1 = 0;
@@ -37,6 +33,10 @@ public class piles_game3{
     
     int userPicked = 0;
    
+    
+    //This code fills the array 1-5
+    //with random numbers between
+    //1 and 5 for every array.
     Random rand = new Random();
     int [] piles = new int [5];
     piles [0] = rand.nextInt (5)+1;
@@ -48,34 +48,40 @@ public class piles_game3{
    
     
     while(game_count < games_played){
-      game_count++;
+      game_count++;//this adds 1 to the game_count variable to show the number game that the player is upto
       System.out.println("You are now up to game " + game_count);
       
-      
+      //This statment prints out the state of the piles 
+      //before the user can take away from them
       System.out.println("The piles are.....");
       System.out.println("1 | " + piles [0]);
       System.out.println("2 | " + piles [1]);
       System.out.println("3 | " + piles [2]);
       System.out.println("4 | " + piles [3]);
       System.out.println("5 | " + piles [4]);  
-                         
+     
+      
+      //This if/else statement takes the "userPicked" variable
+      //from a method and based on which number it is it will decide which player
+      //with start the game.
       if(userPicked == 1){
         System.out.println(player1 +" will start the game, this means you are player 2.");
-        player1 = startingPlayer;
-        player2 = secondPlayer;
       }else{
         System.out.println(player2 + " will start the game this means you are player 1.");
-        player2 = startingPlayer;
-        player1 = secondPlayer;
       }//if else
+      
+      //This statment takes the user input and applys it to the if/else statment
+      //which also could have been a "switch" statement but I felt more conifdent 
+      //using the if/else
       
       System.out.println("Player 1 pick the pile you would like to minus from");
       System.out.println( "then pick the amount you would like to take away."); 
       userPile1 = readInt ("What pile would you like to minus from");
       userTokens1 = readInt("How many tokens would you like to take away");
       
-      while(piles [0] + piles [1] + piles [2] + piles [3] + piles [4] >= 5){ //game has not been won AND counters remain
-        
+      while(piles [0] + piles [1] + piles [2] + piles [3] + piles [4] >= 5){        
+        //This statment takes the "userPile1" variable and puts it into an if/else in order
+        //to select the pile that the player would take tokens away from using the "usertokens1" variable.
           if(userPile1 == 1){
              System.out.println("The piles are now.......");
             System.out.println("1 | " + (piles [0] - userTokens1));
@@ -115,8 +121,12 @@ public class piles_game3{
             System.out.println("An error occured");  
           }//ELSE 
           
-player_turn = 1;
-          
+player_turn = 1; //This changes the player_turn to 1 so below in the if else
+                 //it can display a message to the winning player
+
+
+          //This code is the same as the stack above apart from the fact it use 
+          //userPile2 and userTokens2
           System.out.println("Can player 2 please pick the pile you would like to minus from");
           System.out.println( "then pick the amount you would like to take away."); 
           userPile2 = readInt ("What pile would you like to minus from");
@@ -155,20 +165,23 @@ player_turn = 1;
             System.out.println("An error occured");  
           }//ELSE 
           
-player_turn = 2;
+player_turn = 2;//This changes the player_turn to 2 so below in the if else
+                 //it can display a message to the winning player
           
       }//while
-      
+      //This statment takes the player_turn variable and puts
+      //it in an if/else to check which player had the last turn before the loop
+      //ended.
       if(player_turn == 1){
         player1_score++;
-        System.out.println( "Player 1 has won the game with " +player1_score );
+        System.out.println( "Player 1 has won the game");
         System.out.println("----------------------------");
         System.out.println("Restart the game to continue");
         System.out.println("----------------------------");
         
       }else{
         player2_score++;
-        System.out.println("Player 2 has won the game with " + player2_score );
+        System.out.println("Player 2 has won the game ");
         System.out.println("----------------------------");
         System.out.println("Restart the game to continue");
         System.out.println("----------------------------");
@@ -178,12 +191,20 @@ player_turn = 2;
     
   }//main
   
+  
+  //this method picks a number
+  //between 1 and 2 then assigns that
+  //number to the userPicked variable
+  //which is used above in the if/else.
   private static int userPicked(){
     Random rand = new Random();
     int userPicked = rand.nextInt( 2 ) + 1; 
     return userPicked;
   }//pickedUser Method
   
+  //This method takes a INT input from the 
+  //user and I changed the catch on it so if the player adds 
+  //a letter instead of a number they will get another prompt
   public static int readInt(String prompt){
     int userInput =0;
     System.out.println(prompt);
@@ -200,7 +221,9 @@ player_turn = 2;
     
     return userInput;
   }//end readInt
-  
+  //This method get the user input for the
+  //STRING data type and is used for getting the names
+  //of the players.
   public static String readString(String prompt){
     System.out.println(prompt);
     Scanner keyboard = new Scanner(System.in);
